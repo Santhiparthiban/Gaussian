@@ -8,10 +8,10 @@ To write a program to find the solution of a matrix using Gaussian Elimination.
 2. Anaconda – Python 3.7 Installation / Moodle-Code Runner
 
 ## Algorithm
-1.Step 1: Import the numpy module to use the built-in function for calculation
-2.Step 2: prepare the list from matrix and assign in np.array()
-3.Step 3: Using lu_solve and lu_factor we can find the solution
-4.Step 4:End the program
+## Step 1: Import the numpy module to use the built-in function for calculation
+## Step 2: prepare the list from matrix and assign in np.array()
+## Step 3: Using lu_solve and lu_factor we can find the solution
+## Step 4:End the program
 
 ## Program:
 Program to find L and U matrix using LU decomposition.
