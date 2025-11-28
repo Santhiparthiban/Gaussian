@@ -25,7 +25,6 @@ P,L,U=lu(A)
 print(L)
 print(U)
 ```
-/*
 Program to find the solution of a matrix using Gaussian Elimination.
 Developed by: P.SANTHI
 RegisterNumber: 25004254
