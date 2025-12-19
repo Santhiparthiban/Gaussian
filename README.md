@@ -8,38 +8,45 @@ To write a program to find the solution of a matrix using Gaussian Elimination.
 2. Anaconda – Python 3.7 Installation / Moodle-Code Runner
 
 ## Algorithm
-## Step 1: Import the numpy module to use the built-in function for calculation
-## Step 2: prepare the list from matrix and assign in np.array()
-## Step 3: Using lu_solve and lu_factor we can find the solution
-## Step 4:End the program
+## Step 1:First,we want to import numpy,then import sys,assume a variable.
+## Step 2:For gaussian elimination method, we want to make 2nd and 3rd column zero.
+## Step 3:for that we want to make a range accorting to our program output.
+## Step 4:Then print the program with correct form then the output will display.
+
 
 ## Program:
-Program to find L and U matrix using LU decomposition.
-Developed by: P.SANTHI
-RegisterNumber: 25004254
+Program to solve a matrix using Gaussian elimination without partial pivoting.
+Developed by: SANTHI P
+RegisterNumber:25004254
 ```
 import numpy as np
-from scipy.linalg import lu
-A=np.array(eval(input()))
-P,L,U=lu(A)
-print(L)
-print(U)
+import sys
+n=int(input())
+a=np.zeros((n,n+1))
+X=np.zeros(n)
+for i in range(n):
+    for j in range(n+1):
+        a[i][j]=float(input())
+for i in range(n):
+    if a[i][j]==0:
+        sys.exit('Divide by zero detected!')
+    for j in range(i+1,n):
+        ratio=a[j][i]/a[i][i]
+        for k in range(n+1):
+            a[j][k]=a[j][k]-ratio*a[i][k]
+X[n-1]=a[n-1][n]/a[n-1][n-1]
+for i in range (n-2,-1,-1):
+    X[i]=a[i][n]
+    for j in range(i+1,n):
+        X[i]=X[i]-a[i][j]*X[j]
+    X[i]=X[i]/a[i][i]
+for i in range(n):
+    print('X%d = %0.2f'%(i,X[i]),end=' ')
 ```
-Program to find the solution of a matrix using Gaussian Elimination.
-Developed by: P.SANTHI
-RegisterNumber: 25004254
-```
-import numpy as np
-from scipy.linalg import lu_factor,lu_solve
-A=np.array(eval(input()))
-B=np.array(eval(input()))
-lu,pivot=lu_factor(A)
-x=lu_solve((lu,pivot),B)
-print(x)
-```
+
 ## Output:
-<img width="1920" height="1080" alt="Screenshot (53)" src="https://github.com/user-attachments/assets/907196c9-bfff-4f53-9d55-c061a4bcd3e2" />
-<img width="1920" height="1080" alt="Screenshot (54)" src="https://github.com/user-attachments/assets/1fc17ab8-662e-4b26-a6be-0699ec949ae1" />
+<img width="1920" height="1080" alt="Screenshot (67)" src="https://github.com/user-attachments/assets/45982fa1-9e59-4c68-b72a-38c1165f9933" />
+
 
 ## Result:
 Thus the program to find the solution of a matrix using Gaussian Elimination is written and verified using python programming.
